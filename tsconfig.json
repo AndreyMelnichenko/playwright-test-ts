@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "ES2018",
+        "moduleResolution": "node",
+        "noUnusedLocals": false,
+        "noUnusedParameters": true,
+        "baseUrl": ".",
+        "paths": {
+            "*": ["./*"],
+            "@lib/*": ["src/*"],
+            "@test-data/*": ["test-data/*"]
+        },
+        "types": ["node"],
+        "typeRoots": ["node_modules/@types"],
+        "noEmit": true
+    },
+    "include": ["src/**/*.ts", "./test/**/*.ts"],
+    "exclude": ["./node_modules"]
+}
