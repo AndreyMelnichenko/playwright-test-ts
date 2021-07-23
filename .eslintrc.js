@@ -7,13 +7,15 @@ module.exports = {
         tsconfigRootDir: __dirname,
         createDefaultProgram: true,
     },
-    plugins: ['@typescript-eslint', 'import'],
+    plugins: ['@typescript-eslint', 'import', 'prettier'],
     extends: [
         'eslint:recommended',
         'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
         'plugin:import/errors',
         'plugin:import/warnings',
+        'plugin:import/typescript',
+        'plugin:prettier/recommended',
         'prettier',
     ],
     env: {
@@ -22,7 +24,7 @@ module.exports = {
     },
     rules: {
         // plugin rules
-        '@typescript-eslint/no-use-before-define': ['error', { functions: false }],
+        '@typescript-eslint/no-use-before-define': ['error', {functions: false}],
         '@typescript-eslint/no-var-requires': 'error',
         '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/no-unused-vars': 'error',
@@ -33,7 +35,7 @@ module.exports = {
         'import/namespace': 'off',
         // eslint rules
         eqeqeq: ['error', 'smart'],
-        quotes: ['error', 'single', { avoidEscape: true }],
+        quotes: ['error', 'single', {avoidEscape: true}],
         'global-require': 'error',
         'accessor-pairs': 'error',
         'array-bracket-newline': ['error', 'consistent'],
@@ -54,7 +56,7 @@ module.exports = {
         ],
         'comma-style': ['error', 'last'],
         'dot-notation': 'error',
-        indent: ['error', 4, { SwitchCase: 1 }],
+        indent: ['error', 4, {SwitchCase: 1}],
         'no-eq-null': 'error',
         'no-floating-decimal': 'error',
         'no-inline-comments': 'warn',

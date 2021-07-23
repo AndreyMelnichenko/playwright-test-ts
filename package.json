@@ -8,10 +8,11 @@
   "keywords": [],
   "license": "ISC",
   "scripts": {
+    "test-chrome": "playwright test --config=chrome.playwright.config.ts --headed",
     "test": "playwright test --config=playwright.config.ts --headed",
     "test-all": "playwright test --browser=all",
     "lint": "eslint --no-ignore --ext .js --ext .ts .",
-    "lint:write": "eslint --ext .js --ext .ts --fix",
+    "lint:write": "eslint --ext .js --ext .ts ./ --fix",
     "docker:base": "docker build -f Dockerfile --no-cache -t playwright .",
     "docker:test": "docker container run --env browser=chromium --env env=all:qa playwright"
   },
