@@ -24,7 +24,7 @@ module.exports = {
     },
     rules: {
         // plugin rules
-        '@typescript-eslint/no-use-before-define': ['error', {functions: false}],
+        '@typescript-eslint/no-use-before-define': ['error', { functions: false }],
         '@typescript-eslint/no-var-requires': 'error',
         '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/no-unused-vars': 'error',
@@ -35,9 +35,10 @@ module.exports = {
         'import/namespace': 'off',
         // eslint rules
         eqeqeq: ['error', 'smart'],
-        quotes: ['error', 'single', {avoidEscape: true}],
+        quotes: ['error', 'single', { avoidEscape: true }],
         'global-require': 'error',
         'accessor-pairs': 'error',
+        'object-curly-spacing': ['error', 'always'],
         'array-bracket-newline': ['error', 'consistent'],
         'array-bracket-spacing': ['error', 'never'],
         'arrow-spacing': [
@@ -56,7 +57,7 @@ module.exports = {
         ],
         'comma-style': ['error', 'last'],
         'dot-notation': 'error',
-        indent: ['error', 4, {SwitchCase: 1}],
+        indent: ['error', 4, { SwitchCase: 1 }],
         'no-eq-null': 'error',
         'no-floating-decimal': 'error',
         'no-inline-comments': 'warn',

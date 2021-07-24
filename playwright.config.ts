@@ -1,5 +1,5 @@
 // playwright.config.ts
-import {PlaywrightTestConfig, devices} from '@playwright/test';
+import { PlaywrightTestConfig, devices } from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
     projects: [
@@ -15,7 +15,7 @@ const config: PlaywrightTestConfig = {
             name: 'Desktop Safari',
             use: {
                 browserName: 'webkit',
-                viewport: {width: 1200, height: 750},
+                viewport: { width: 1200, height: 750 },
             },
         },
         // Test against mobile viewports.
@@ -31,7 +31,7 @@ const config: PlaywrightTestConfig = {
             name: 'Desktop Firefox',
             use: {
                 browserName: 'firefox',
-                viewport: {width: 800, height: 600},
+                viewport: { width: 800, height: 600 },
             },
         },
     ],
