@@ -3,11 +3,22 @@ import { PlaywrightTestConfig } from '@playwright/test';
 const config: PlaywrightTestConfig = {
     projects: [
         {
-            name: 'Chrome Stable',
+            name: 'Chrome',
             use: {
                 browserName: 'chromium',
-                // Test against Chrome Stable channel.
                 channel: 'chrome',
+                screenshot: 'only-on-failure',
+                locale: 'en-US',
+                launchOptions: {
+                    headless: false,
+                    slowMo: 150,
+                    args: [
+                        '--disable-glsl-translator',
+                        '--disable-gl-extensions',
+                        '--disable-features=TranslateUI',
+                        '--disable-extensions',
+                    ],
+                },
             },
         },
     ],

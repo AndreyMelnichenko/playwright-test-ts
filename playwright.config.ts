@@ -2,13 +2,20 @@
 import { PlaywrightTestConfig, devices } from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
+    retries: 2,
+    workers: process.env.CI ? 4 : 2,
+    timeout: 20000,
+    use: {
+        headless: true,
+    },
     projects: [
         {
-            name: 'Chrome Stable',
+            name: 'Chrome',
             use: {
                 browserName: 'chromium',
                 // Test against Chrome Stable channel.
                 channel: 'chrome',
+                screenshot: 'only-on-failure',
             },
         },
         {

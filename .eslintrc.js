@@ -84,6 +84,7 @@ module.exports = {
         'no-useless-rename': 'error',
         'no-useless-return': 'error',
         'no-var': 'error',
+        'newline-per-chained-call': ['error', { ignoreChainWithDepth: 2 }],
         'one-var-declaration-per-line': 'error',
         'unicode-bom': ['error', 'never'],
         'wrap-regex': 'error',
