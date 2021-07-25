@@ -1,4 +1,5 @@
 import { Page } from '@playwright/test';
+import { ElementAction } from '../../src/elementActions/ElementAction';
 
 export class SignUpPage {
     private page: Page;
@@ -11,10 +12,10 @@ export class SignUpPage {
     }
 
     public async pageLoaded(): Promise<SignUpPage> {
-        await this.page.waitForSelector(this.signUpForm, { state: 'hidden' });
-        await (await this.page.waitForSelector(this.signUpForm)).focus();
-        await (await this.page.waitForSelector(this.signUpButton)).focus();
-        await (await this.page.waitForSelector(this.signUpSecondButton)).focus();
+        await this.page.waitForURL('**/signup/');
+        await ElementAction.waitForElemetVisible(this.page, this.signUpForm);
+        await ElementAction.waitForElemetVisible(this.page, this.signUpButton);
+        await ElementAction.waitForElemetVisible(this.page, this.signUpSecondButton);
         return this;
     }
 }

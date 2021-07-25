@@ -8,7 +8,7 @@
         "paths": {
             "*": ["./*"],
             "@lib/*": ["src/*"],
-            "@test-data/*": ["test-data/*"]
+            "@test-data/*": ["test/*"]
         },
         "types": ["node"],
         "typeRoots": ["node_modules/@types"],

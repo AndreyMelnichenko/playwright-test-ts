@@ -8,13 +8,15 @@
     "keywords": [],
     "license": "ISC",
     "scripts": {
-        "test-chrome": "playwright test --config=chrome.playwright.config.ts --project=Chrome",
+        "test-chrome": "playwright test --config=chrome.playwright.config.ts --project=Chrome --grep @mainPage",
         "test": "playwright test --config=playwright.config.ts",
         "test-all": "playwright test --browser=all",
         "lint": "eslint --no-ignore --ext .js --ext .ts .",
         "lint:write": "eslint --ext .js --ext .ts ./ --fix",
         "docker:base": "docker build -f Dockerfile --no-cache -t playwright .",
-        "docker:test": "docker container run --env browser=chromium --env env=all:qa playwright"
+        "docker:test": "docker container run --env browser=chromium --env env=all:qa playwright",
+        "allure-generate": "allure generate ./allure-results --clean",
+        "allure-open": "allure serve"
     },
     "lint-staged": {
         "*.(js|ts)": [
@@ -31,10 +33,12 @@
         "@types/node": "^16.4.0",
         "@typescript-eslint/eslint-plugin": "^4.28.4",
         "@typescript-eslint/parser": "^4.28.4",
+        "allure-commandline": "2.13.8",
         "eslint": "^7.31.0",
         "eslint-config-prettier": "^8.3.0",
         "eslint-plugin-import": "^2.23.4",
         "eslint-plugin-prettier": "^3.4.0",
+        "experimental-allure-playwright": "^0.0.3",
         "playwright": "^1.13.0",
         "prettier": "2.3.2",
         "ts-node": "^10.1.0",

@@ -17,6 +17,7 @@ export class MainPage {
 
     public async pageLoaded(): Promise<MainPage> {
         await this.page.waitForSelector(this.serachContainer);
+        await (await this.page.$(this.serachContainer)).scrollIntoViewIfNeeded();
         return this;
     }
 
