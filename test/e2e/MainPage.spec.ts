@@ -21,11 +21,6 @@ test.describe('Main Page', () => {
         expect(isDateVisible).toBeTruthy();
     });
 
-    test('should not contain date container @mainPage', async () => {
-        const isDateVisible: boolean = await mainPage.isDateInputVisible();
-        expect(!isDateVisible).toBeTruthy();
-    });
-
     test('sign button should follow to SignUp page', async () => {
         const signUpPage: SignUpPage = await mainPage.clickToHeaderSignUp();
         await signUpPage.pageLoaded();

@@ -12,7 +12,7 @@ export class SignUpPage {
     }
 
     public async pageLoaded(): Promise<SignUpPage> {
-        await this.page.waitForURL('**/signup/');
+        await ElementAction.waitForUrl(this.page, '**/signup/');
         await ElementAction.waitForElemetVisible(this.page, this.signUpForm);
         await ElementAction.waitForElemetVisible(this.page, this.signUpButton);
         await ElementAction.waitForElemetVisible(this.page, this.signUpSecondButton);

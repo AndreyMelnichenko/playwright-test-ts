@@ -30,6 +30,7 @@ const config: PlaywrightTestConfig = {
                         '--disable-gl-extensions',
                         '--disable-features=TranslateUI',
                         '--disable-extensions',
+                        '--disable-dev-shm-usage',
                     ],
                 },
             },

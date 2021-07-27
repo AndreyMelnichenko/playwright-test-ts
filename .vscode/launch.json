@@ -1,12 +1,15 @@
 {
     "version": "0.2.0",
     "configurations": [
-      {
-        "type": "node-terminal",
-        "request": "launch",
-        "name": "chrome haded",
-        "skipFiles": ["<node_internals>/**"],
-        "command": "npm run test-chrome"
-      }
+        {
+            "type": "node-terminal",
+            "request": "launch",
+            "name": "chrome haded",
+            "skipFiles": ["<node_internals>/**"],
+            "command": "npm run test-chrome",
+            "env": {
+                "DEBUG": "pw:api"
+            }
+        }
     ]
-  }
+}

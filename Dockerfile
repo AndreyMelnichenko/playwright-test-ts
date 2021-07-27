@@ -1,9 +1,9 @@
-FROM mcr.microsoft.com/playwright:v1.9.0-focal
+FROM mcr.microsoft.com/playwright:v1.10.0-focal
 USER root
 RUN mkdir -p /home/tests
 WORKDIR /home/tests
 
 COPY . .
 
-RUN npm ci && chmod 777 entrypoint.sh
-CMD ["/bin/bash", "./entrypoint.sh"]
+RUN npm ci
+CMD ["/bin/bash", "npm run test-chrome"]

@@ -8,6 +8,7 @@
     "keywords": [],
     "license": "ISC",
     "scripts": {
+        "pretest": "rm -rf ./allure-results ./allure-report ./test-results ./test-data",
         "test-chrome": "playwright test --config=chrome.playwright.config.ts --project=Chrome --grep @mainPage",
         "test": "playwright test --config=playwright.config.ts",
         "test-all": "playwright test --browser=all",

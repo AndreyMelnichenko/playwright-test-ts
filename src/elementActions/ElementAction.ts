@@ -5,4 +5,8 @@ export class ElementAction {
         await page.waitForSelector(selector, { state: 'attached' });
         await (await page.$(selector)).scrollIntoViewIfNeeded();
     }
+
+    public static async waitForUrl(page: Page, url: string): Promise<void> {
+        await page.waitForURL(url);
+    }
 }
