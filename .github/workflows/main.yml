@@ -28,9 +28,9 @@ jobs:
         with:
           node-version: '14'
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      # Runs npm install
+      - name: install dependencies
+        run: npm install
         
       - name: Install operating system dependencies
         run: npx playwright install-deps
