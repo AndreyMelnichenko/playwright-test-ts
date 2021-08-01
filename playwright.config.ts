@@ -7,7 +7,13 @@ const config: PlaywrightTestConfig = {
     timeout: 20000,
     use: {
         headless: true,
+        baseURL: 'https://www.poptop.uk.com',
+        locale: 'en-US',
+        screenshot: 'only-on-failure',
+        trace: 'retain-on-failure',
     },
+    testDir: '.',
+    reporter: [['junit', { outputFile: './test-results/results.xml' }], ['experimental-allure-playwright'], ['line']],
     projects: [
         {
             name: 'Chrome',
