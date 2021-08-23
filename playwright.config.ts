@@ -34,7 +34,11 @@ const config: PlaywrightTestConfig = {
         // Test against mobile viewports.
         {
             name: 'Mobile Chrome',
-            use: devices['Pixel 5'],
+            use: {
+                ...devices['iPhone 12'],
+                browserName: 'chromium',
+                viewport: { width: 390, height: 669 },
+            },
         },
         {
             name: 'Mobile Safari',

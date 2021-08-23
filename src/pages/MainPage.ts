@@ -9,6 +9,7 @@ export class MainPage {
     private readonly dateInput: string = 'input[placeholder="Date"]';
     private readonly serachContainer: string = "div[data-chunk='searchForm']";
     private readonly signUpButton: string = "div[data-chunk='header'] a[href='/signup/']";
+    private readonly header: string = "div[data-chunk='header']>div";
     private page: Page;
 
     constructor(page: Page) {
@@ -16,8 +17,21 @@ export class MainPage {
     }
 
     public async pageLoaded(): Promise<MainPage> {
+        const searchForm = await this.page.$(this.serachContainer);
         await this.page.waitForSelector(this.serachContainer);
-        await (await this.page.$(this.serachContainer)).scrollIntoViewIfNeeded();
+        await searchForm.scrollIntoViewIfNeeded();
+        await searchForm.waitForElementState('stable');
+        await this.page.waitForLoadState('domcontentloaded');
+
+        const header = await this.page.waitForSelector(this.header);
+        await header.waitForElementState('stable');
+        await header.evaluate((el) => {
+            return window.getComputedStyle(el).getPropertyValue('background-color');
+        });
+        // console.log("!!!!! "+color);
+        // await this.page.screenshot({
+        //     path: `scr-${new Date()}.png`,
+        // });
         return this;
     }
 

@@ -10,6 +10,16 @@
             "env": {
                 "DEBUG": "pw:api"
             }
+        },
+        {
+            "type": "node-terminal",
+            "request": "launch",
+            "name": "iPhone12",
+            "skipFiles": ["<node_internals>/**"],
+            "command": "npm run test-iphone12",
+            "env": {
+                "DEBUG": "pw:api"
+            }
         }
     ]
 }

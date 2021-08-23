@@ -19,12 +19,8 @@ const config: PlaywrightTestConfig = {
                 screenshot: 'only-on-failure',
                 locale: 'en-US',
                 launchOptions: {
-                    headless: true,
+                    headless: false,
                     slowMo: 50,
-                    logger: {
-                        isEnabled: (name, severity) => name === 'browser',
-                        log: (name, severity, message, args) => console.log(`${name} ${message}`),
-                    },
                     args: [
                         '--disable-glsl-translator',
                         '--disable-gl-extensions',

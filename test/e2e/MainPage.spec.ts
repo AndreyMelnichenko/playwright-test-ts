@@ -11,7 +11,7 @@ test.describe('Main Page', () => {
         await mainPage.pageLoaded();
     });
 
-    test('should contain text into main container @mainPage', async () => {
+    test('should contain text into main container @mainPage @mobile', async () => {
         const name = await mainPage.isMainText('The Smartest Way To Plan Your Events');
         expect(name).toBeTruthy();
     });
