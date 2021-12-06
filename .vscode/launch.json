@@ -6,9 +6,10 @@
             "request": "launch",
             "name": "PW-DEBUG",
             "skipFiles": ["<node_internals>/**"],
-            "command": "./node_modules/.bin/playwright test --config=playwright.config.ts --project='Desktop Chrome' --workers 1 --retries=0",
+            "command": "./node_modules/.bin/playwright test --config=playwright.config.ts --project='Desktop Chrome' --workers 4 --retries=0",
             "env": {
-                "TAG": "@C222|@C333"
+                "TAG": "@C1",
+                "CI": "false",
             }
         }
     ]

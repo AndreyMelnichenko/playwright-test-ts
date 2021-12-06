@@ -57,13 +57,13 @@ export class GotRequestClient {
             hooks: {
                 afterResponse: [
                     (response) => {
-                        console.log(`RESPONSE CODE ${response.statusCode}`)
-                        console.log(`RESPONSE HEADERS ${JSON.stringify(response.headers, undefined, 2)}`)
+                        // console.log(`RESPONSE CODE ${response.statusCode}`)
+                        // console.log(`RESPONSE HEADERS ${JSON.stringify(response.headers, undefined, 2)}`)
                         if (response.body) {
                             const body: string = response.body as string
-                    console.log(`RESPONSE BODY: \n${JSON.stringify(body.replace(/[\n\r\t\\"]/g, ""), undefined, 2)}`)
+                    // console.log(`RESPONSE BODY: \n${JSON.stringify(body.replace(/[\n\r\t\\"]/g, ""), undefined, 2)}`)
                         } else {
-                            console.log("{}")
+                            // console.log("{}")
                         }
 
                         return response
@@ -72,12 +72,12 @@ export class GotRequestClient {
                 beforeRequest: [
                     (options) => {
                         if (!options.headers["user-agent"]) options.headers["user-agent"] = "Automation tests"
-                        console.log(`REQUEST URL: ${options.method} ${String(options.url)}`)
-                        console.log(`REQUEST HEADERS: \n${JSON.stringify(options.headers, undefined, 2)}`)
+                        // console.log(`REQUEST URL: ${options.method} ${String(options.url)}`)
+                        // console.log(`REQUEST HEADERS: \n${JSON.stringify(options.headers, undefined, 2)}`)
                         if (options.body) {
-                            console.log(`REQUEST BODY: \n${String(options.body)}`)
+                            // console.log(`REQUEST BODY: \n${String(options.body)}`)
                         } else {
-                            console.log("{}")
+                            // console.log("{}")
                         }
                     },
                 ],
